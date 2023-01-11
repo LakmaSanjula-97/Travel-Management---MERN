@@ -83,7 +83,7 @@ export default class updateFeedback extends Component {
       <div className="form_feedback">
         <br></br>
         <br></br>
-        <h2 id="headertext">Edit Feedback Details</h2>
+        <h2 id="headertext" style={{marginLeft:"18cm", marginTop:"2cm", fontWeight:"bold"}}>Update Feedback Details</h2>
 
         <form onSubmit={this.onSubmit} id="form_feedback">
           <div className="row" required>

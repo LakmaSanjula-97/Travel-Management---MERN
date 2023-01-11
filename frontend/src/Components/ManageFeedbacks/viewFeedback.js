@@ -7,6 +7,7 @@ export default class allFeedbacks extends Component {
   constructor(props) {
     super(props);
     this.state = { feedbacks: [], searchId: "" };
+
   }
 
   componentDidMount() {
@@ -45,6 +46,7 @@ export default class allFeedbacks extends Component {
     this.props.history.push("/dashboard/addfeedback");
   }
 
+
   render() {
     let filtername = this.state.feedbacks.filter((p) => {
       return p.name.indexOf(this.state.searchId) !== -1;
@@ -74,9 +76,13 @@ export default class allFeedbacks extends Component {
         </div>
 
         <div>
-          <a className="btn btn-warning" id="btn3" href="/dashboard/addfeedback">
-                <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
-                    Add Feedback
+          <a
+            className="btn btn-warning"
+            id="btn3"
+            href="/dashboard/addfeedback"
+          >
+            <i class="fa fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp; Add
+            Feedback
           </a>
         </div>
 
@@ -99,9 +105,8 @@ export default class allFeedbacks extends Component {
               <tr>
                 <th style={{ textAlign: "center" }}>Topic</th>
                 <th style={{ textAlign: "center" }}>Name</th>
-                <th style={{ textAlign: "center" }}>Contact</th>
                 <th style={{ textAlign: "center" }}>Email</th>
-                <th style={{ textAlign: "center" }}>Message</th>
+                <th style={{ textAlign: "center", width: "5cm" }}>Details</th>
                 <th style={{ textAlign: "center", width: "5cm" }}>Status</th>
               </tr>
             </thead>
@@ -112,9 +117,16 @@ export default class allFeedbacks extends Component {
                   <tr key={index}>
                     <td>{p.topic}</td>
                     <td>{p.name}</td>
-                    <td>{p.contact}</td>
                     <td>{p.email}</td>
-                    <td>{p.message}</td>
+                    <td>
+                      <a
+                        className="btn btn-warning"
+                        id="btn_view"
+                        href={`/dashboard/viewfeedback/${p._id}`}
+                      >
+                        <i class="fas fa-edit "></i>&nbsp;&nbsp;View
+                      </a>
+                    </td>
                     <td>
                       <a
                         className="btn btn-warning"

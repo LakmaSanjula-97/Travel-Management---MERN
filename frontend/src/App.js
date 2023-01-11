@@ -18,6 +18,7 @@ import UpdatePackage from './Components/ManagePackages/UpdatePackageDetails';
 import AddFeedback from './Components/ManageFeedbacks/AddFeedback';
 import allFeedbacks from './Components/ManageFeedbacks/viewFeedback';
 import updateFeedback from './Components/ManageFeedbacks/updateFeedback';
+import viewFeedbackDetail from './Components/ManageFeedbacks/viewFeedBackDetail';
 
 
 axios.defaults.withCredentials = true;
@@ -50,6 +51,7 @@ function App() {
           <Route path="/dashboard/addfeedback" exact component={AddFeedback} />
           <Route path="/dashboard/allfeedbacks" exact component={allFeedbacks} />
           <Route path="/dashboard/updatefeedback/:id" exact component={updateFeedback} />
+          <Route path="/dashboard/viewfeedback/:id" exact component={viewFeedbackDetail} />
 
         </div>
 

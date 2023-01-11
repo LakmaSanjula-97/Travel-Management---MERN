@@ -63,7 +63,7 @@ class AddFeedback extends Component {
             emailError= 'Feedback email is Required';
           }
           if(!this.state.message) {
-            messageError ='Rich Message is Required';
+            messageError ='Message is Required';
           }
           
           if (topicError || nameError || contactError || emailError || messageError  ){
