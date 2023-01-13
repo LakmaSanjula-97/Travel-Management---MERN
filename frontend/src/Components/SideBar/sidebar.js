@@ -57,6 +57,46 @@ function sidebar() {
                 </li>
               </ul>
 
+              {/* --------customer--------- */}
+              <li
+                data-toggle="collapse"
+                data-target="#customers"
+                className="collapsed"
+              >
+                <a href="#">
+                  <i class="fa fa-bus" aria-hidden="true"></i>{" "}
+                  &nbsp;&nbsp;&nbsp; Customers <span className="arrow"></span>
+                </a>
+              </li>
+              <ul className="sub-menu collapse" id="customers">
+                <li>
+                  <a href="/dashboard/addcustomer">Add Customer</a>
+                </li>
+                <li>
+                  <a href="/dashboard/allcustomers">All Customers</a>
+                </li>
+              </ul>
+
+              {/* --------order--------- */}
+              <li
+                data-toggle="collapse"
+                data-target="#orders"
+                className="collapsed"
+              >
+                <a href="#">
+                  <i class="fa fa-bus" aria-hidden="true"></i>{" "}
+                  &nbsp;&nbsp;&nbsp; Orders <span className="arrow"></span>
+                </a>
+              </li>
+              <ul className="sub-menu collapse" id="orders">
+                <li>
+                  <a href="/dashboard/addOrder">Add Order</a>
+                </li>
+                <li>
+                  <a href="/dashboard/allorders">All Orders</a>
+                </li>
+              </ul>
+
               {/* --------feedbacks--------- */}
               <li
                 data-toggle="collapse"

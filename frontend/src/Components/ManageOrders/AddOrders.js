@@ -40,7 +40,7 @@ class AddOrder extends Component {
     this.changestatusdHandler = this.changestatusdHandler.bind(this);
   }
   notify() {
-    toast.warn("New Order Details Added Successfully!", {
+    toast.warn("Order Details Added Successfully!", {
       position: toast.POSITION.TOP_CENTER,
     });
   }
@@ -55,25 +55,25 @@ class AddOrder extends Component {
     let statusError = "";
 
     if (!this.state.cusName) {
-      cusNameError = "Name is Required";
+      cusNameError = "Customer Name is Required";
     }
     if (!this.state.order_item) {
-      order_itemError = "order item is Required";
+      order_itemError = "Package is Required";
     }
     if (!this.state.email) {
-      emailError = "email is Required";
+      emailError = "Email is Required";
     }
     if (!this.state.placeStart) {
-      placeStartError = "place Start is Required";
+      placeStartError = "Start Place is Required";
     }
     if (!this.state.totalPrice) {
-      totalPriceError = "total Price is Required";
+      totalPriceError = "Total Price is Required";
     }
     if (!this.state.orderDate) {
-      orderDateError = "order Date is Required";
+      orderDateError = "Ordered Date is Required";
     }
     if (!this.state.status) {
-      statusError = "status is Required";
+      statusError = "Ststus is Required";
     }
 
     if (
@@ -158,7 +158,7 @@ class AddOrder extends Component {
 
         <form onSubmit={this.sendData} id="form_order">
           <div className="row">
-            <label htmlFor="name" class="ftext">
+            <label htmlFor="cusName" class="ftext">
               Customer Name
             </label>
 
@@ -166,7 +166,6 @@ class AddOrder extends Component {
               type="text"
               className="form-control"
               id="cusName"
-              placeholder="Order Name"
               value={this.state.cusName}
               onChange={this.changecusNameHandler}
             />
@@ -175,6 +174,26 @@ class AddOrder extends Component {
               {this.state.cusNameError}
             </div>
           </div>
+
+          <div className="row">
+            <label htmlFor="cusName" class="ftext">
+              Customer Name
+            </label>
+
+            <input
+              type="text"
+              className="form-control"
+              id="cusName"
+              value={this.state.cusName}
+              onChange={this.changecusNameHandler}
+            />
+
+            <div style={{ fontSize: "14px", color: "red" }}>
+              {this.state.cusNameError}
+            </div>
+                </div>
+                
+                
 
           <div className="row">
             <label htmlFor="order_item">Package</label>
@@ -198,7 +217,9 @@ class AddOrder extends Component {
           </div>
 
           <div className="row">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email" class="ftext">
+              Email
+            </label>
 
             <input
               type="text"
@@ -214,15 +235,13 @@ class AddOrder extends Component {
           </div>
 
           <div className="row">
-            <label htmlFor="placeStart" class="ftext">
-              Start Place
-            </label>
+            <label htmlFor="placeStart">Start Place</label>
 
             <input
               type="text"
               className="form-control"
               id="placeStart"
-              placeholder="placeStart"
+              placeholder="Package placeStart"
               value={this.state.placeStart}
               onChange={this.changeplaceStartHandler}
             />
@@ -238,7 +257,7 @@ class AddOrder extends Component {
               type="text"
               className="form-control"
               id="totalPrice"
-              placeholder="totalPrice"
+              placeholder="Package Rich Description"
               value={this.state.totalPrice}
               onChange={this.changetotalPriceHandler}
             />
@@ -248,13 +267,13 @@ class AddOrder extends Component {
           </div>
 
           <div className="row">
-            <label htmlFor="orderDate">Ordered Date</label>
+            <label htmlFor="orderDate">Order Date</label>
 
             <input
               type="text"
               className="form-control"
               id="orderDate"
-              placeholder="orderDate"
+              placeholder="Date"
               value={this.state.orderDate}
               onChange={this.changeorderDateHandler}
             />

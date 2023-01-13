@@ -19,6 +19,12 @@ import AddFeedback from './Components/ManageFeedbacks/AddFeedback';
 import allFeedbacks from './Components/ManageFeedbacks/viewFeedback';
 import updateFeedback from './Components/ManageFeedbacks/updateFeedback';
 import viewFeedbackDetail from './Components/ManageFeedbacks/viewFeedBackDetail';
+import AddCustomer from './Components/ManageCustomers/AddCustomers';
+import allCustomerDetails from './Components/ManageCustomers/ViewCustomerDetails';
+import UpdateCustomer from './Components/ManageCustomers/UpdateCustomerDetails';
+import allOrders from './Components/ManageOrders/ViewOrderDetails';
+import AddOrder from './Components/ManageOrders/AddOrders';
+import UpdateOrder from './Components/ManageOrders/UpdateOrderDetails';
 
 
 axios.defaults.withCredentials = true;
@@ -52,6 +58,16 @@ function App() {
           <Route path="/dashboard/allfeedbacks" exact component={allFeedbacks} />
           <Route path="/dashboard/updatefeedback/:id" exact component={updateFeedback} />
           <Route path="/dashboard/viewfeedback/:id" exact component={viewFeedbackDetail} />
+
+          <Route path="/dashboard/addcustomer" exact component={AddCustomer} />
+          <Route path="/dashboard/allcustomers" exact component={allCustomerDetails} />
+          <Route path="/dashboard/updatecustomer/:id" exact component={UpdateCustomer} />
+
+          <Route path="/dashboard/addOrder" exact component={AddOrder} />
+          <Route path="/dashboard/allorders" exact component={allOrders} />
+          <Route path="/dashboard/updateorder/:id" exact component={UpdateOrder} />
+          {/* <Route path="/dashboard/vieworder/:id" exact component={} /> */}
+
 
         </div>
 
